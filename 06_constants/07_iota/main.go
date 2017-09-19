@@ -8,6 +8,7 @@ const (
 	MB = 1 << (iota * 10) // 1 << (2 * 10)
 	GB = 1 << (iota * 10) // 1 << (3 * 10)
 	TB = 1 << (iota * 10) // 1 << (4 * 10)
+	PB = 1 << (iota * 10)
 )
 
 func main() {
@@ -20,4 +21,6 @@ func main() {
 	fmt.Printf("%d\n", GB)
 	fmt.Printf("%b\t", TB)
 	fmt.Printf("%d\n", TB)
+	fmt.Printf("%b\t", PB)
+	fmt.Printf("%d\n", PB)
 }

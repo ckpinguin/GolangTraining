@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 const p = "death & taxes"
+const Pi = 3.14
 
 func main() {
 
