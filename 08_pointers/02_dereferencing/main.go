@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "reflect"
 
 func main() {
 
@@ -12,6 +13,7 @@ func main() {
 	var b = &a
 	fmt.Println(b)  // 0x20818a220
 	fmt.Println(*b) // 43
+	fmt.Println(reflect.TypeOf(b))
 
 	// b is an int pointer;
 	// b points to the memory address where an int is stored
