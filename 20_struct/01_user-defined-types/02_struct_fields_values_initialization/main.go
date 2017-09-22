@@ -8,14 +8,9 @@ type person struct {
 	age   int
 }
 
-func (p person) fullName() string {
-	return p.first + p.last
-}
-
 func main() {
 	p1 := person{"James", "Bond", 20}
 	p2 := person{"Miss", "Moneypenny", 18}
-	fmt.Println((person).fullName(p1)) // de-sugared
-	fmt.Println(p1.fullName())
-	fmt.Println(p2.fullName())
+	fmt.Println(p1.first, p1.last, p1.age)
+	fmt.Println(p2.first, p2.last, p2.age)
 }
