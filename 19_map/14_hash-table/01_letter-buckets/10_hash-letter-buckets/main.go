@@ -27,10 +27,10 @@ func main() {
 		buckets[n]++
 	}
 	fmt.Println(buckets[65:123])
-	// fmt.Println("***************")
-	// for i := 28; i <= 126; i++ {
-	// fmt.Printf("%v - %c - %v \n", i, i, buckets[i])
-	// }
+	fmt.Println("***************")
+	for i := 28; i <= 126; i++ {
+		fmt.Printf("%v - %c - %v \n", i, i, buckets[i])
+	}
 }
 
 func hashBucket(word string) int {

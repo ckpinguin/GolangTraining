@@ -22,6 +22,8 @@ func main() {
 		fmt.Println("val: ", val)
 		fmt.Println("exists: ", exists)
 	}
-
 	fmt.Println(myGreeting)
+	sliceOfMap := myGreeting[2]
+	fmt.Println("slice [2]: ", sliceOfMap)
+
 }

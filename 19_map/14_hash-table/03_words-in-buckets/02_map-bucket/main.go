@@ -35,8 +35,11 @@ func main() {
 		buckets[n][word]++
 	}
 	// Print words in a bucket
-	for k, v := range buckets[6] {
-		fmt.Println(v, " \t- ", k)
+	// for k, v := range buckets[6] {
+	// 	fmt.Println(v, " \t- ", k)
+	// }
+	for i := range buckets {
+		fmt.Println(i, " - ", len(buckets[i]))
 	}
 }
 

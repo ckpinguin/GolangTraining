@@ -31,8 +31,11 @@ func main() {
 
 func hashBucket(word string, buckets int) int {
 	var sum int
+	fmt.Println("for word: ", word)
 	for _, v := range word {
+		fmt.Printf("%c %v\n", v, int(v))
 		sum += int(v)
 	}
+	fmt.Println("sum is: ", sum)
 	return sum % buckets
 }
