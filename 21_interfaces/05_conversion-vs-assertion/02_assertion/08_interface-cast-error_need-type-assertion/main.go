@@ -9,6 +9,8 @@ func main() {
 
 	var val interface{} = 7
 	fmt.Printf("%T\n", val)
+	// this bonks:
 	fmt.Printf("%T\n", int(val))
-	//	fmt.Printf("%T\n", val.(int))
+	// we need assertion for interface types!
+	// fmt.Printf("%T\n", val.(int))
 }
