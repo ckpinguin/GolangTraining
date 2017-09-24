@@ -58,4 +58,11 @@ func main() {
 	fmt.Println("sorted: ", n)
 	sort.Sort(sort.Reverse(sort.IntSlice(n)))
 	fmt.Println("reversed: ", n)
+
+	// example of type/interface assertion
+	t := sort.Reverse(sort.StringSlice(s))
+	fmt.Printf("t (StringSlice?): %T\n", t)
+	t, ok := t.(sort.Interface)
+	fmt.Println(t, ok)
+
 }
