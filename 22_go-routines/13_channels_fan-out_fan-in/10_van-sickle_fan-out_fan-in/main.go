@@ -9,7 +9,7 @@ func main() {
 	in := gen()
 	out := make(chan int)
 
-	// FAN OUT
+	// FAN OUT & IN
 	// Multiple functions reading from the same channel until that channel is closed
 	// Distribute work across multiple functions (ten goroutines) that all read from in.
 	fanOut(in, 10, out)
@@ -49,7 +49,6 @@ func fanOut(in <-chan int, n int, out chan<- int) {
 func factorial(in <-chan int, out chan<- int) {
 	go func() {
 		for n := range in {
-
 			out <- fact(n)
 		}
 	}()
