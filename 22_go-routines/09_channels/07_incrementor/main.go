@@ -2,9 +2,24 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"runtime/trace"
 )
 
 func main() {
+	// f, err := os.Create(time.Now().Format("2006-01-02T150405.pprof"))
+	// f, err := os.Create("trace.out")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer f.Close()
+
+	// if err := trace.Start(f); err != nil {
+	// 	panic(err)
+	// }
+	trace.Start(os.Stderr)
+	defer trace.Stop()
+
 	c1 := incrementor("Foo:")
 	c2 := incrementor("Bar:")
 	c3 := puller(c1)
