@@ -16,6 +16,7 @@ const (
 
 // A score includes scores accumulated in previous turns for each player,
 // as well as the points scored by the current player in this turn.
+// "state" would probably be a better name for it
 type score struct {
 	player, opponent, thisTurn int
 }
