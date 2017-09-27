@@ -8,7 +8,7 @@ func main() {
 	go func() {
 		for i := 0; i < 10; i++ {
 			fmt.Println("In goroutine:", i)
-			c <- i
+			c <- i // blocking here, until main() takes off one
 		}
 		close(c)
 	}()

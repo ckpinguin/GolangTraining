@@ -61,10 +61,10 @@ func play(strategy0, strategy1 strategy) int {
 	var turnIsOver bool
 	currentPlayer := rand.Intn(2) // Randomly decide who plays first
 	for s.player+s.thisTurn < win {
-		action := strategies[currentPlayer](s)
-		s, turnIsOver = action(s)
+		action := strategies[currentPlayer](s) // set strategy
+		s, turnIsOver = action(s)              // apply strategy func
 		if turnIsOver {
-			currentPlayer = (currentPlayer + 1) % 2
+			currentPlayer = (currentPlayer + 1) % 2 // toggle player
 		}
 	}
 	return currentPlayer
@@ -75,7 +75,7 @@ func roundRobin(strategies []strategy) ([]int, int) {
 	wins := make([]int, len(strategies))
 	for i := 0; i < len(strategies); i++ {
 		for j := i + 1; j < len(strategies); j++ {
-			for k := 0; k < gamesPerSeries; k++ {
+			for k := 0; k < gamesPerSeries; k++ { // repeat every combination
 				winner := play(strategies[i], strategies[j])
 				if winner == 0 {
 					wins[i]++
@@ -109,9 +109,9 @@ func ratioString(vals ...int) string {
 }
 
 func main() {
-	strategies := make([]strategy, win)
+	strategies := make([]strategy, win) // slice of strategy up to winning score
 	for k := range strategies {
-		strategies[k] = stayAtK(k + 1)
+		strategies[k] = stayAtK(k + 1) // every risk-taking simulated?
 	}
 	wins, games := roundRobin(strategies)
 
